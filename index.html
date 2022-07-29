@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+
+    <script
+      src="https://kit.fontawesome.com/b822d3dbf9.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Single Page App</title>
+  </head>
+  <body>
+    <div class="bg">
+      <div class="container">
+        <!-- #region MAIN NAV -->
+        <nav id="main-nav">
+          <h1 class="logo">Exan</h1>
+          <ul>
+            <a href="#" class="quickmenu-btn"
+              ><li>
+                <i class="fa-solid fa-house"></i></li
+            ></a>
+            <a href="#" class="categories-btn"
+              ><li><i class="fa-solid fa-tag"></i></li
+            ></a>
+            <a href="#" class="products-btn"
+              ><li><i class="fa-solid fa-box"></i></li
+            ></a>
+            <a href="#" class="store-btn"
+              ><li>
+                <i class="fa-solid fa-store"></i></li
+            ></a>
+            <a href="#" class="cart-btn"
+              ><li>
+                <i class="fa-solid fa-cart-shopping"></i
+                ><span class="item-counter hidden"></span></li
+            ></a>
+
+            <a href="#" class="employees-btn"
+              ><li><i class="fa-solid fa-people-group"></i></li
+            ></a>
+            <a href="#" class="customers-btn"
+              ><li><i class="fa-solid fa-person"></i></li
+            ></a>
+            <a href="#" class="logout-btn"
+              ><li><i class="fa-solid fa-right-from-bracket"></i></li
+            ></a>
+          </ul>
+        </nav>
+        <!-- #endregion -->
+        <!-- #region VIEW SECTION -->
+        <section id="view-section">
+          <header id="main-header">
+            <div class="username-container">
+              <i class="fa-solid fa-user"></i>
+              <p>mleduccl</p>
+            </div>
+          </header>
+          <h2 id="page-title"></h2>
+          <!-- #region LOGIN -->
+
+          <section id="login" class="hidden">
+            <h2 class="login-form-error hidden"></h2>
+            <form class="login-form">
+              <div class="form-control">
+                <label for="email-input">Email: </label>
+                <input id="email-input" type="text" />
+              </div>
+              <div class="form-control">
+                <label for="password-input">Password: </label>
+                <input id="password-input" type="password" />
+              </div>
+              <button id="login-button">Login</button>
+            </form>
+          </section>
+
+          <!-- #endregion -->
+          <!-- #region HOME-->
+          <section id="home" class="hidden">
+            <div class="greetings"></div>
+          </section>
+          <!-- #endregion -->
+          <!-- #region GENERAL FORM -->
+          <section id="general-form">
+            <form id="create-item-form" class="hidden"></form>
+          </section>
+          <!-- #endregion -->
+          <!-- #region STORE -->
+          <section id="store">
+            <div class="card-container"></div>
+          </section>
+          <!-- #endregion -->
+          <!-- #region CART-->
+          <section id="cart" class="rounded hidden">
+            <div class="table-controls">
+              <label for="products-pagination-select">Show</label>
+              <select id="products-pagination-select">
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="50">50</option>
+              </select>
+              <p>products per page</p>
+              <button class="update-cart-button">Update Cart</button>
+            </div>
+            <p class="no-data-text hidden">Nothing in the cart</p>
+            <table id="cart-table">
+              <thead>
+                <tr>
+                  <th>name</th>
+                  <th>sku</th>
+                  <th>price</th>
+                  <th>count</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+            <div class="total-text">
+              <div>
+                <p>Total:</p>
+                <p class="total-amount"></p>
+                $
+              </div>
+            </div>
+            <div class="purchase-button">
+              <button>Place Order</button>
+            </div>
+          </section>
+          <!-- #endregion -->
+          <!-- #region PRODUCTS -->
+          <section id="products" class="rounded">
+            <div class="table-controls">
+              <label for="products-pagination-select">Show</label>
+              <select id="products-pagination-select">
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="50">50</option>
+              </select>
+              <p>products per page</p>
+              <button class="create-item-button">Add Product</button>
+            </div>
+            <p class="no-data-text hidden">No data for table</p>
+            <table id="products-table">
+              <thead></thead>
+              <tbody></tbody>
+            </table>
+          </section>
+          <!-- #endregion -->
+          <!-- #region CATEGORIES -->
+          <section id="categories" class="rounded hidden">
+            <div class="table-controls">
+              <label for="products-pagination-select">Show</label>
+              <select id="products-pagination-select">
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="50">50</option>
+              </select>
+              <p>products per page</p>
+              <button class="create-item-button">Add Category</button>
+            </div>
+            <p class="no-data-text hidden">No data for table</p>
+            <table id="categories-table">
+              <thead></thead>
+              <tbody></tbody>
+            </table>
+          </section>
+          <!-- #endregion -->
+          <!-- #region EMPLOYEES -->
+          <section id="employees" class="rounded hidden">
+            <div class="table-controls">
+              <label for="products-pagination-select">Show</label>
+              <select id="products-pagination-select">
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="50">50</option>
+              </select>
+              <p>products per page</p>
+              <button class="create-item-button">Add Employee</button>
+            </div>
+            <p class="no-data-text hidden">No data for table</p>
+            <table id="employees-table">
+              <thead></thead>
+              <tbody></tbody>
+            </table>
+          </section>
+          <!-- #endregion -->
+          <!-- #region CUSTOMERS -->
+          <section id="customers" class="rounded hidden">
+            <div class="table-controls">
+              <label for="products-pagination-select">Show</label>
+              <select id="products-pagination-select">
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="50">50</option>
+              </select>
+              <p>products per page</p>
+              <button class="create-item-button">Add Customer</button>
+            </div>
+            <p class="no-data-text hidden">No data for table</p>
+            <table id="customers-table">
+              <thead></thead>
+              <tbody></tbody>
+            </table>
+          </section>
+          <!-- #endregion -->
+          <!-- #region LOGOUT -->
+          <section id="logout" class="hidden"></section>
+          <!-- #endregion -->
+          <!-- #endregion -->
+          <footer>
+            <p>&copy; Exan</p>
+          </footer>
+        </section>
+      </div>
+    </div>
+    <script src="script.js" defer></script>
+  </body>
+</html>
