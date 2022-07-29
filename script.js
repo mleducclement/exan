@@ -119,8 +119,8 @@ const forms = [
     form_name: "products",
     sku: { type: "input", subtype: "text", label: "SKU" },
     name: { type: "input", subtype: "text", label: "Product Name" },
-    stock: { type: "input", subtype: "number", label: "Current Inventory" },
-    price: { type: "input", subtype: "number", label: "Price" },
+    stock: { type: "input", subtype: "text", label: "Current Inventory" },
+    price: { type: "input", subtype: "text", label: "Price" },
     category: { type: "select", subtype: "none", label: "Product Category" },
   },
   {
@@ -456,7 +456,12 @@ const createLabel = (parent, el, key) => {
 
 const createInput = (parent, el, key, inputGroup, entryValue = null) => {
   let input = document.createElement(el.type);
-  input.setAttribute("type", el.subtype);
+
+  if (el.subtype !== "none") {
+    input.setAttribute("type", el.subtype);
+    input.setAttribute("Placeholder", key);
+  }
+
   input.setAttribute("id", key);
   input.value = entryValue ?? "";
 
@@ -614,11 +619,11 @@ const buildStore = () => {
   list.content.map((el) => {
     card = document.createElement("div");
     card.classList.add("card");
-    card.innerHTML = `    
-      <h3>${el.name}</h3>            
+    card.innerHTML = `
+      <p>${el.sku}</p>
       <i class="fa-solid fa-computer"></i>
-      <h4>${el.sku}</h4>
-      <h4>${el.price}</h4>`;
+      <p>${el.name}</p>
+      <p>${el.price}</p>`;
     card.addEventListener("click", (e) => {
       addToCart(el.id);
     });

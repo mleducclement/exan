@@ -21,6 +21,10 @@ html {
   color: white;
 }
 
+body {
+  background: rgb(44, 41, 48);
+}
+
 nav li {
   list-style-type: none;
 }
@@ -53,7 +57,6 @@ button {
   max-width: 1920px;
   display: flex;
   margin: 0 auto;
-  background: rgb(44, 41, 48);
   border-left: 1px solid black;
   border-right: 1px solid black;
 }
@@ -62,55 +65,35 @@ button {
   display: none;
 }
 
-.create-item-button,
-.update-cart-button {
-  padding: 1rem;
-  font-size: 1rem;
-  background: rgb(71, 3, 71);
-  color: white;
-  border: 1px solid rgb(94, 6, 94);
-  border-radius: 10px;
-}
-
 /*#endregion */
 
 /*#region CARD */
 
 .card-container {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 1.5rem;
   align-items: center;
 }
 
 .card {
+  width: 50%;
   padding: 0.5rem;
-  flex: 1 0 31%;
+  text-align: center;
+  color: #efffef;
   border: 1px solid black;
-  background: rgb(228, 228, 228);
+  border-radius: 15px;
+  background: rgb(96, 35, 209);
 }
 
 .card i {
-  margin: 0 auto;
   padding: 0.5rem;
-  display: block;
-  color: #242e41;
-  font-size: 3.5rem;
-  text-align: center;
+  font-size: 2rem;
 }
 
-.card h3 {
-  margin: 0.5rem 0;
-  text-align: center;
-  color: #242e41;
-}
-
-.card h4 {
-  color: #242e41;
-  text-align: center;
+.card p {
 }
 
 /*#endregion */
@@ -239,48 +222,76 @@ td:last-child {
 
 .form-control {
   width: 70%;
-  margin: 10px auto;
+  margin: 10px auto 2rem;
 }
 
 .form-control label {
-  display: block;
-  margin: 0 auto;
   width: 50%;
   min-width: 150px;
+  margin: 0 auto;
+  display: block;
   font-size: 1.2rem;
+  color: #efffff;
 }
 
-.form-control input {
-  display: block;
-  margin: 0 auto;
-  padding: 3px 0 3px 5px;
-  font-size: 1rem;
+.form-control input,
+.form-control select {
   width: 50%;
   min-width: 150px;
-  border-radius: 5px;
+  display: block;
+  margin: 1rem auto 0;
+  padding: 0.5rem 0 0.5rem;
+  font-size: 1.2rem;
+  color: white;
+  border: none;
+  border-bottom: 2px solid gray;
+  outline: 0px transparent;
+  background: transparent;
 }
 
 .form-control select {
-  display: block;
-  margin: 0 auto;
-  padding: 3px 0 3px 5px;
-  font-size: 1rem;
-  width: 50%;
-  min-width: 150px;
-  border-radius: 5px;
+  appearance: none;
+}
+
+.form-control option {
+  margin: 0;
+  padding: 0;
+  color: black;
+  background: gray;
+  border: none;
 }
 
 .submit-btn,
 .cancel-btn {
+  padding: 0.8rem 2rem;
   font-size: 1rem;
-  padding: 0.2rem 0.8rem;
-  cursor: pointer;
+  color: white;
+  background: rgb(96, 35, 209);
+  border: 1px solid rgb(74, 35, 182);
+  border-radius: 10px;
+}
+
+.submit-btn:hover,
+.cancel-btn:hover {
+  background: rgb(132, 39, 185);
+  border: 1px solid rgb(127, 37, 179);
+}
+
+#create-item-form .form-control:last-child {
+  margin-top: 80px;
+  width: 30%;
+  display: flex;
+  justify-content: space-around;
 }
 
 /*#endregion */
 
 /*#region HOME */
-/* TO FILLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL */
+
+.greetings {
+  background: rgb(119, 18, 201);
+}
+
 /*#endregion */
 
 /*#region MAIN NAV */
@@ -309,7 +320,7 @@ td:last-child {
 }
 
 #main-nav li:hover {
-  background: rgb(51, 113, 124);
+  background: rgb(80, 61, 187);
 }
 
 #main-nav .logo {
@@ -373,7 +384,7 @@ td:last-child {
 /*#region STORE */
 
 #store .card {
-  max-width: 31%;
+  max-width: 19%;
   cursor: pointer;
 }
 
@@ -397,9 +408,18 @@ td:last-child {
 
 .login-form button {
   display: block;
-  margin: 1.5rem auto 0 auto;
-  padding: 0.5rem 2rem;
-  font-size: 1.3rem;
+  margin: 0 auto;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  color: white;
+  background: rgb(96, 35, 209);
+  border: 1px solid rgb(74, 35, 182);
+  border-radius: 10px;
+}
+
+.login-form button:hover {
+  background: rgb(132, 39, 185);
+  border: 1px solid rgb(127, 37, 179);
 }
 
 /*#endregion*/
@@ -429,15 +449,20 @@ td:last-child {
   margin-left: auto;
 }
 
-/*#endregion */
+.create-item-button,
+.update-cart-button {
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  color: white;
+  background: rgb(96, 35, 209);
+  border: 1px solid rgb(74, 35, 182);
+  border-radius: 10px;
+}
 
-/*#region CREATE FORM */
-
-#create-item-form .form-control:last-child {
-  margin-top: 30px;
-  width: 30%;
-  display: flex;
-  justify-content: space-around;
+.create-item-button:hover,
+.update-cart-button:hover {
+  background: rgb(132, 39, 185);
+  border: 1px solid rgb(127, 37, 179);
 }
 
 /*#endregion */
