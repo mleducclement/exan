@@ -536,6 +536,9 @@ const authentify = () => {
 
   if (employee && employee.password === login_input_group[1].value.trim()) {
     loggedUser = employee;
+    document.querySelector(
+      ".username-container p"
+    ).innerHTML = `${loggedUser["first name"]} ${loggedUser["last name"]}`;
     return true;
   }
   return false;
@@ -671,12 +674,14 @@ const rebuildCart = () => {
     total_text_div.classList.add("hidden");
     purchase_btn.classList.add("hidden");
     cart_table.classList.add("hidden");
+    update_cart_btn.classList.add("hidden");
     return;
   } else {
     document.querySelector("#cart .no-data-text").classList.add("hidden");
     total_text_div.classList.remove("hidden");
     purchase_btn.classList.remove("hidden");
     cart_table.classList.remove("hidden");
+    update_cart_btn.classList.remove("hidden");
   }
 
   cartContent.map((el) => {

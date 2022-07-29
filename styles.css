@@ -62,6 +62,16 @@ button {
   display: none;
 }
 
+.create-item-button,
+.update-cart-button {
+  padding: 1rem;
+  font-size: 1rem;
+  background: rgb(71, 3, 71);
+  color: white;
+  border: 1px solid rgb(94, 6, 94);
+  border-radius: 10px;
+}
+
 /*#endregion */
 
 /*#region CARD */
@@ -324,7 +334,7 @@ td:last-child {
   text-align: center;
   color: white;
   background: #2a65d3;
-  border: 1px solid #242e41;
+  border: 1px solid rgb(44, 41, 48);
   border-radius: 50%;
 }
 
