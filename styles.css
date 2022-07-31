@@ -68,9 +68,9 @@ button {
   width: 90%;
   margin: 0 auto;
   display: flex;
+  gap: 1rem;
   justify-content: space-between;
   flex-wrap: wrap;
-  align-items: center;
 }
 
 .card {
@@ -366,7 +366,7 @@ td:last-child {
 /*#region STORE */
 
 #store .card {
-  max-width: 19%;
+  max-width: 29%;
   cursor: pointer;
 }
 
@@ -556,10 +556,25 @@ footer {
     width: 100%;
   }
 
+  .table-controls label,
+  .table-controls p {
+    font-size: 0.8rem;
+  }
+
+  .table-controls select {
+    font-size: 0.8rem;
+  }
+
+  .create-item-button,
+  .update-cart-button {
+    padding: 0.5rem 0.5rem;
+    font-size: 0.8rem;
+  }
+
   th,
   td {
     font-size: 0.7rem;
-    padding: 0;
+    padding: 2px;
     width: 1%;
     white-space: nowrap;
   }
@@ -588,27 +603,39 @@ footer {
     border: none;
   }
 
-  #view-section section {
-    padding: 0;
+  .card-container {
+    width: 95%;
   }
 
-  .table-controls label,
-  .table-controls p {
-    font-size: 0.8rem;
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
   }
 
-  .table-controls select {
-    font-size: 0.8rem;
-  }
-
-  .create-item-button,
-  .update-cart-button {
-    padding: 0.5rem 0.5rem;
-    font-size: 0.8rem;
+  .card i {
+    padding: 0.5rem;
+    font-size: 2rem;
   }
 }
 
-@media screen and (orientation: landscape) and (min-device-width: 650px) and (max-device-width: 1024px) {
+@media screen and (max-width: 500px) {
+  .card-container {
+    margin-top: 2rem;
+    width: 95%;
+    justify-content: center;
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  #store .card {
+    max-width: 40%;
+    cursor: pointer;
+  }
 }
 
 /*#endregion */
