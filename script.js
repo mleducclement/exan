@@ -240,6 +240,7 @@ customers_buttons.map((el) => {
 logout_buttons.map((el) => {
   el.addEventListener("click", (e) => {
     isLoggedIn = false;
+    document.querySelector(".username-container").classList.add("hidden");
     showPage(1);
   });
 });
@@ -279,10 +280,10 @@ update_cart_btn.addEventListener("click", () => {
 });
 
 purchase_btn.addEventListener("click", () => {
+  updateStock();
   cartContent = [];
   rebuildCart();
   updateCartBadge();
-  updateStock();
 });
 
 //#endregion
@@ -541,6 +542,7 @@ const authentify = () => {
 
   if (employee && employee.password === login_input_group[1].value.trim()) {
     loggedUser = employee;
+    document.querySelector(".username-container").classList.remove("hidden");
     document.querySelector(
       ".username-container p"
     ).innerHTML = `${loggedUser["first name"]} ${loggedUser["last name"]}`;
@@ -766,9 +768,10 @@ const readLocalStorage = () => {
 
 const updateStock = () => {
   let productList = lists.find((list) => list.name === "products");
+  console.log(productList);
 
   cartContent.map((item) => {
-    let product = productList.find((product) => item.id === product.id);
+    let product = productList.content.find((product) => item.id === product.id);
 
     product.stock -= item.count;
   });
